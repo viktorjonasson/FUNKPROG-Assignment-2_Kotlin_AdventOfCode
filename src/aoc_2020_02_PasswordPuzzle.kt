@@ -7,7 +7,7 @@ import java.io.File
 fun main() {
     val data: List<String> = File("src/2020_02_input.txt").readLines()
 
-    val testData: List<String> = listOf(
+    /*val testData: List<String> = listOf(
         "14-17 s: ssssssgsssszspssb", //13 false + false
         "5-13 m: kmmctmsmmmglzxm", //7 true + false
         "4-7 s: qhrhsdbsmmlstznms", //4 true + false
@@ -16,12 +16,12 @@ fun main() {
         "14-18 n: nnnnnnnnnnnnknnnbn" //16 true + false (n på båda platser)
         //ska vara 5 för del 1
         //ska vara 2 för del 2
-        )
+        )*/
 
     //Part 01
-    println(countCorrectPw(data, ::validatePwPatternRulesetPart01))
+    println("Result part 01: " + countCorrectPw(data, ::validatePwPatternRulesetPart01))
     //Part 02
-    println(countCorrectPw(data, ::validatePwPatternRulesetPart02))
+    println("Result part 02: " + countCorrectPw(data, ::validatePwPatternRulesetPart02))
 }
 
 fun getCondNumbers (input: String): List<Int> = Regex("\\d+").findAll(input)

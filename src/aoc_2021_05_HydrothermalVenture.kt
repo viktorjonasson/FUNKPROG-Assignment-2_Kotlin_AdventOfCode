@@ -2,6 +2,8 @@ package adventofcode
 
 import java.io.File
 
+//AOC 2021, puzzle 05, part 01
+
 //Input data mapped to strings
 val coordinatesInput: Map<Int, String> = File("src/2021_05_input.txt")
         .readLines()
@@ -32,20 +34,16 @@ val mapOfCoordinateOccurrences: MutableMap<Int, MutableList<Int>> =
 //----------
 
 fun main() {
-    //For demo and debug purposes
-    println(coordinatesInput)
-    println(mapWithInputCoordinates)
-
-    //Filling the coordinates with occurences of lines, value corresponds to how many times a line is passing each coordinate
+    //Filling the coordinates with occurrences of lines, value corresponds to how many times a line is passing each coordinate
     populateCoordinateMap(mapWithInputCoordinates)
 
     //Counting how many times at least 2 lines are passing a coordinate
-    print("Final result: " + countOccurences(mapOfCoordinateOccurrences))
+    println("Final result: " + countOccurrences(mapOfCoordinateOccurrences))
 }
 
 //----------
 
-//Filling the coordinates with occurences of lines, value corresponds to how many times a line is passing each coordinate
+//Filling the coordinates with occurrences of lines, value corresponds to how many times a line is passing each coordinate
 fun populateCoordinateMap(map: Map<Int, List<Int>>) {
     //For each entry (key/value-pair) in the input map
     for ((_, value) in map) {
@@ -67,7 +65,7 @@ fun populateCoordinateMap(map: Map<Int, List<Int>>) {
 }
 
 //Counting how many times at least 2 lines are passing a coordinate
-fun countOccurences (input: Map <Int, List<Int>>): Int {
+fun countOccurrences (input: Map <Int, List<Int>>): Int {
     var counter = 0
     for (entry in input) {
         for (value in entry.value) {
